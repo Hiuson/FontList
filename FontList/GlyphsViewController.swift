@@ -85,17 +85,15 @@ class BackLinesView: UIView {
     init(_ font: UIFont) {
         orginalFont = font
         super.init(frame: .zero)
-//        layer.borderColor = UIColor.black.cgColor
-//        layer.borderWidth = 1
         backgroundColor = .init(white: 0, alpha: 0.1)
         
         addSubview(ascenderLine)
         addSubview(descenderLine)
         addSubview(capLine)
         addSubview(xLine)
-        addSubview(lineHeightLine)
         addSubview(leadingLine)
         addSubview(centerLine)
+//        addSubview(lineHeightLine)
         
         ascenderLine.snp.makeConstraints { (make) in
             make.top.equalTo(orginalFont.ascender)
@@ -117,11 +115,6 @@ class BackLinesView: UIView {
             make.leading.trailing.equalToSuperview()
         }
         
-        lineHeightLine.snp.makeConstraints { (make) in
-            make.top.equalTo(font.lineHeight)
-            make.leading.trailing.equalToSuperview()
-        }
-        
         leadingLine.snp.makeConstraints { (make) in
             make.top.equalTo(descenderLine).offset(font.leading)
             make.leading.trailing.equalToSuperview()
@@ -130,6 +123,12 @@ class BackLinesView: UIView {
         centerLine.snp.makeConstraints { (make) in
             make.centerY.leading.trailing.equalToSuperview()
         }
+        
+//        lineHeightLine.snp.makeConstraints { (make) in
+//            make.top.equalToSuperview()
+//            make.height.equalTo(font.lineHeight)
+//            make.leading.equalToSuperview().offset(30)
+//        }
     }
     
     private lazy var ascenderLine: ColorLineView = {
@@ -148,17 +147,17 @@ class BackLinesView: UIView {
         return ColorLineView(.green, "xHeight")
     }()
     
-    private lazy var lineHeightLine: ColorLineView = {
-        return ColorLineView(.cyan, "lineHeight")
-    }()
-    
     private lazy var leadingLine: ColorLineView = {
-        return ColorLineView(.blue, "leading")
+        return ColorLineView(.cyan, "leading")
     }()
     
     private lazy var centerLine: ColorLineView = {
-        return ColorLineView(.purple, "center")
+        return ColorLineView(.blue, "center")
     }()
+    
+//    private lazy var lineHeightLine: VerticalColorLine = {
+//        return VerticalColorLine(.purple, "lineHeight")
+//    }()
     
     override var intrinsicContentSize: CGSize {
         return CGSize(width: UIView.noIntrinsicMetric, height:orginalFont.lineHeight)
@@ -181,12 +180,16 @@ class ColorLineView: UIView {
         
         addSubview(titleLabel)
         
+        setUpConstraints()
+    }
+    
+    func setUpConstraints() {
         titleLabel.snp.makeConstraints { (make) in
             make.leading.bottom.equalToSuperview()
         }
     }
     
-    private lazy var titleLabel: UILabel = {
+    lazy var titleLabel: UILabel = {
         let label = UILabel()
         label.text = self.title
         label.font = .systemFont(ofSize: 15)
@@ -203,5 +206,17 @@ class ColorLineView: UIView {
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+}
+
+class VerticalColorLine: ColorLineView {
+    override func setUpConstraints() {
+        titleLabel.snp.makeConstraints { (make) in
+            make.leading.top.equalToSuperview()
+        }
+    }
+    
+    override var intrinsicContentSize: CGSize {
+        return CGSize(width: 0.5, height: UIView.noIntrinsicMetric)
     }
 }
