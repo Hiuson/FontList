@@ -3,16 +3,17 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		880A156524C542750005AF47 /* GlyphsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 880A156424C542750005AF47 /* GlyphsViewController.swift */; };
+		880A159E24C544B40005AF47 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 880A159D24C544B40005AF47 /* SnapKit */; };
+		880A15A124C54D6A0005AF47 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 880A159F24C54D6A0005AF47 /* LaunchScreen.storyboard */; };
 		8888991324BDCE810049E096 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8888991224BDCE810049E096 /* AppDelegate.swift */; };
 		8888991524BDCE810049E096 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8888991424BDCE810049E096 /* SceneDelegate.swift */; };
 		8888991724BDCE810049E096 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8888991624BDCE810049E096 /* ViewController.swift */; };
-		8888991A24BDCE810049E096 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8888991824BDCE810049E096 /* Main.storyboard */; };
 		8888991C24BDCE810049E096 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8888991B24BDCE810049E096 /* Assets.xcassets */; };
-		8888991F24BDCE810049E096 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8888991D24BDCE810049E096 /* LaunchScreen.storyboard */; };
 		8888992A24BDCE820049E096 /* FontListTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8888992924BDCE820049E096 /* FontListTests.swift */; };
 /* End PBXBuildFile section */
 
@@ -27,13 +28,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		880A156424C542750005AF47 /* GlyphsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlyphsViewController.swift; sourceTree = "<group>"; };
+		880A15A024C54D6A0005AF47 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8888990F24BDCE810049E096 /* FontList.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FontList.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8888991224BDCE810049E096 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8888991424BDCE810049E096 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		8888991624BDCE810049E096 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		8888991924BDCE810049E096 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		8888991B24BDCE810049E096 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		8888991E24BDCE810049E096 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8888992024BDCE810049E096 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8888992524BDCE820049E096 /* FontListTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FontListTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8888992924BDCE820049E096 /* FontListTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontListTests.swift; sourceTree = "<group>"; };
@@ -45,6 +46,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				880A159E24C544B40005AF47 /* SnapKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -79,13 +81,13 @@
 		8888991124BDCE810049E096 /* FontList */ = {
 			isa = PBXGroup;
 			children = (
+				880A159F24C54D6A0005AF47 /* LaunchScreen.storyboard */,
 				8888991224BDCE810049E096 /* AppDelegate.swift */,
 				8888991424BDCE810049E096 /* SceneDelegate.swift */,
 				8888991624BDCE810049E096 /* ViewController.swift */,
-				8888991824BDCE810049E096 /* Main.storyboard */,
 				8888991B24BDCE810049E096 /* Assets.xcassets */,
-				8888991D24BDCE810049E096 /* LaunchScreen.storyboard */,
 				8888992024BDCE810049E096 /* Info.plist */,
+				880A156424C542750005AF47 /* GlyphsViewController.swift */,
 			);
 			path = FontList;
 			sourceTree = "<group>";
@@ -115,6 +117,9 @@
 			dependencies = (
 			);
 			name = FontList;
+			packageProductDependencies = (
+				880A159D24C544B40005AF47 /* SnapKit */,
+			);
 			productName = FontList;
 			productReference = 8888990F24BDCE810049E096 /* FontList.app */;
 			productType = "com.apple.product-type.application";
@@ -165,6 +170,9 @@
 				Base,
 			);
 			mainGroup = 8888990624BDCE810049E096;
+			packageReferences = (
+				880A159C24C544B40005AF47 /* XCRemoteSwiftPackageReference "SnapKit" */,
+			);
 			productRefGroup = 8888991024BDCE810049E096 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -180,9 +188,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8888991F24BDCE810049E096 /* LaunchScreen.storyboard in Resources */,
 				8888991C24BDCE810049E096 /* Assets.xcassets in Resources */,
-				8888991A24BDCE810049E096 /* Main.storyboard in Resources */,
+				880A15A124C54D6A0005AF47 /* LaunchScreen.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -203,6 +210,7 @@
 				8888991724BDCE810049E096 /* ViewController.swift in Sources */,
 				8888991324BDCE810049E096 /* AppDelegate.swift in Sources */,
 				8888991524BDCE810049E096 /* SceneDelegate.swift in Sources */,
+				880A156524C542750005AF47 /* GlyphsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -225,18 +233,10 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		8888991824BDCE810049E096 /* Main.storyboard */ = {
+		880A159F24C54D6A0005AF47 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				8888991924BDCE810049E096 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		8888991D24BDCE810049E096 /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				8888991E24BDCE810049E096 /* Base */,
+				880A15A024C54D6A0005AF47 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -365,6 +365,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 74T9HZDA37;
 				INFOPLIST_FILE = FontList/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -383,6 +384,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 74T9HZDA37;
 				INFOPLIST_FILE = FontList/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -469,6 +471,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		880A159C24C544B40005AF47 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SnapKit/SnapKit";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		880A159D24C544B40005AF47 /* SnapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 880A159C24C544B40005AF47 /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = SnapKit;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 8888990724BDCE810049E096 /* Project object */;
 }

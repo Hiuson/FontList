@@ -2,7 +2,7 @@
 //  AppDelegate.swift
 //  FontList
 //
-//  Created by zhouchun on 2020/7/14.
+//  Created by Ming on 2020/7/14.
 //  Copyright © 2020 Hiuson. All rights reserved.
 //
 

@@ -2,7 +2,7 @@
 //  SceneDelegate.swift
 //  FontList
 //
-//  Created by zhouchun on 2020/7/14.
+//  Created by Ming on 2020/7/14.
 //  Copyright © 2020 Hiuson. All rights reserved.
 //
 
@@ -14,9 +14,13 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
-        // Use this method to optionally configure and attach the UIWindow `window` to the provided UIWindowScene `scene`.
-        // If using a storyboard, the `window` property will automatically be initialized and attached to the scene.
-        // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
+        window = UIWindow(windowScene: scene as! UIWindowScene)
+//        window?.windowScene = scene as? UIWindowScene
+        window?.backgroundColor = .white
+        let vc = ViewController()
+        let nav = UINavigationController(rootViewController: vc)
+        window?.rootViewController = nav
+        window?.makeKeyAndVisible()
         guard let _ = (scene as? UIWindowScene) else { return }
     }
 
