@@ -16,6 +16,7 @@ class GlyphsViewController: UIViewController {
     init(_ font: UIFont) {
         orginalFont = font
         super.init(nibName: nil, bundle: nil)
+        title = font.fontName
     }
      
     override func viewDidLoad() {

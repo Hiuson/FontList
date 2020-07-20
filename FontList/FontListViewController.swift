@@ -8,9 +8,14 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class FontListViewController: UIViewController {
     
     private var dataList: Array<Section> = []
+    
+    init() {
+        super.init(nibName: nil, bundle: nil)
+        title = "Font List"
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -41,9 +46,13 @@ class ViewController: UIViewController {
         tableView.sectionHeaderHeight = 20
         return tableView
     }()
+    
+    required init?(coder: NSCoder) {
+           fatalError("init(coder:) has not been implemented")
+    }
 }
 
-extension ViewController: UITableViewDelegate, UITableViewDataSource {
+extension FontListViewController: UITableViewDelegate, UITableViewDataSource {
     
     func numberOfSections(in tableView: UITableView) -> Int {
         return self.dataList.count

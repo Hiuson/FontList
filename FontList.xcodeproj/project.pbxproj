@@ -12,7 +12,7 @@
 		880A15A124C54D6A0005AF47 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 880A159F24C54D6A0005AF47 /* LaunchScreen.storyboard */; };
 		8888991324BDCE810049E096 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8888991224BDCE810049E096 /* AppDelegate.swift */; };
 		8888991524BDCE810049E096 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8888991424BDCE810049E096 /* SceneDelegate.swift */; };
-		8888991724BDCE810049E096 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8888991624BDCE810049E096 /* ViewController.swift */; };
+		8888991724BDCE810049E096 /* FontListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8888991624BDCE810049E096 /* FontListViewController.swift */; };
 		8888991C24BDCE810049E096 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8888991B24BDCE810049E096 /* Assets.xcassets */; };
 		8888992A24BDCE820049E096 /* FontListTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8888992924BDCE820049E096 /* FontListTests.swift */; };
 /* End PBXBuildFile section */
@@ -33,7 +33,7 @@
 		8888990F24BDCE810049E096 /* FontList.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FontList.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8888991224BDCE810049E096 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8888991424BDCE810049E096 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		8888991624BDCE810049E096 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		8888991624BDCE810049E096 /* FontListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontListViewController.swift; sourceTree = "<group>"; };
 		8888991B24BDCE810049E096 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8888992024BDCE810049E096 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8888992524BDCE820049E096 /* FontListTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FontListTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -84,7 +84,7 @@
 				880A159F24C54D6A0005AF47 /* LaunchScreen.storyboard */,
 				8888991224BDCE810049E096 /* AppDelegate.swift */,
 				8888991424BDCE810049E096 /* SceneDelegate.swift */,
-				8888991624BDCE810049E096 /* ViewController.swift */,
+				8888991624BDCE810049E096 /* FontListViewController.swift */,
 				8888991B24BDCE810049E096 /* Assets.xcassets */,
 				8888992024BDCE810049E096 /* Info.plist */,
 				880A156424C542750005AF47 /* GlyphsViewController.swift */,
@@ -207,7 +207,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8888991724BDCE810049E096 /* ViewController.swift in Sources */,
+				8888991724BDCE810049E096 /* FontListViewController.swift in Sources */,
 				8888991324BDCE810049E096 /* AppDelegate.swift in Sources */,
 				8888991524BDCE810049E096 /* SceneDelegate.swift in Sources */,
 				880A156524C542750005AF47 /* GlyphsViewController.swift in Sources */,
