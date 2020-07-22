@@ -17,6 +17,7 @@ class GlyphsViewController: UIViewController {
         orginalFont = font
         super.init(nibName: nil, bundle: nil)
         title = font.fontName
+        navigationItem.rightBarButtonItem = rightNavBarBtn
     }
      
     override func viewDidLoad() {
@@ -70,9 +71,44 @@ class GlyphsViewController: UIViewController {
     private lazy var fontLabel: UILabel = {
         let label = UILabel()
         label.font = self.orginalFont
-        label.text = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890!@#$%^&*()_+|-=\\[]{};':\",./<>?"
+        label.text = "AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz1234567890!@#$%^&*()_+|-=\\[]{};':\",./<>?"
         return label
     }()
+    
+    private lazy var rightNavBarBtn: UIBarButtonItem = {
+        let item = UIBarButtonItem(title: "More", style: .plain, target: self, action: #selector(moreBtnClicked))
+        return item
+    }()
+    
+    @objc func moreBtnClicked() {
+        let alert = UIAlertController(title: "More Action", message: nil, preferredStyle: .actionSheet)
+        
+        let info = UIAlertAction(title: "Font Info", style: .default) { (alert) in
+            self.showFontInfo()
+        }
+        alert.addAction(info)
+        alert.addAction(UIAlertAction.init(title: "Cancel", style: .cancel, handler: nil))
+        
+        self.present(alert, animated: true, completion: nil)
+    }
+    
+    func showFontInfo() {
+        let info =
+        """
+        familyName: \(self.orginalFont.familyName)
+        fontName: \(self.orginalFont.fontName)
+        pointSize: \(self.orginalFont.pointSize)
+        ascender: \(self.orginalFont.ascender)
+        descender: \(self.orginalFont.descender)
+        capHeight: \(self.orginalFont.capHeight)
+        xHeight: \(self.orginalFont.xHeight)
+        lineHeight: \(self.orginalFont.lineHeight)
+        leading: \(self.orginalFont.leading)
+        """
+        let alert = UIAlertController(title: "Font Info", message: info, preferredStyle: .alert)
+        alert.addAction(UIAlertAction.init(title: "已阅", style: .cancel, handler: nil))
+        self.present(alert, animated: true, completion: nil)
+    }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
@@ -93,7 +129,7 @@ class BackLinesView: UIView {
         addSubview(xLine)
         addSubview(leadingLine)
         addSubview(centerLine)
-//        addSubview(lineHeightLine)
+        addSubview(lineHeightLine)
         
         ascenderLine.snp.makeConstraints { (make) in
             make.top.equalTo(orginalFont.ascender)
@@ -124,15 +160,14 @@ class BackLinesView: UIView {
             make.centerY.leading.trailing.equalToSuperview()
         }
         
-//        lineHeightLine.snp.makeConstraints { (make) in
-//            make.top.equalToSuperview()
-//            make.height.equalTo(font.lineHeight)
-//            make.leading.equalToSuperview().offset(30)
-//        }
+        lineHeightLine.snp.makeConstraints { (make) in
+            make.bottom.equalToSuperview().offset(-font.lineHeight)
+            make.leading.trailing.equalToSuperview()
+        }
     }
     
     private lazy var ascenderLine: ColorLineView = {
-        return ColorLineView(.red, "ascender")
+        return ColorLineView(.red, "baseLine")
     }()
     
     private lazy var descenderLine: ColorLineView = {
@@ -155,9 +190,9 @@ class BackLinesView: UIView {
         return ColorLineView(.blue, "center")
     }()
     
-//    private lazy var lineHeightLine: VerticalColorLine = {
-//        return VerticalColorLine(.purple, "lineHeight")
-//    }()
+    private lazy var lineHeightLine: ColorLineView = {
+        return ColorLineView(.purple, "lineHeight")
+    }()
     
     override var intrinsicContentSize: CGSize {
         return CGSize(width: UIView.noIntrinsicMetric, height:orginalFont.lineHeight)
@@ -193,7 +228,7 @@ class ColorLineView: UIView {
         let label = UILabel()
         label.text = self.title
         label.font = .systemFont(ofSize: 15)
-        label.textColor = self.color.withAlphaComponent(0.5)
+        label.textColor = self.color.withAlphaComponent(0.7)
         label.text = self.title
         return label
     }()
